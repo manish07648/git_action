@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevOps Command Center</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#020407;
+  --panel:#060b10;
+  --neon:#00f2ff;
+  --muted:#7c8a96;
+}
+
+html,body{
+  background:var(--bg);
+  color:#e6edf3;
+  font-family:'Space Grotesk',sans-serif;
+  scroll-behavior:smooth;
+}
+
+/* Typography */
+.heading{font-family:'Syncopate',sans-serif;letter-spacing:.08em;}
+.mono{font-family:monospace;}
+
+/* Panels */
+.panel{
+  background:linear-gradient(180deg,#050b11,#020407);
+  border:1px solid rgba(0,242,255,.08);
+  box-shadow:0 0 80px rgba(0,0,0,.9);
+}
+
+/* Neon frame */
+.frame{
+  border:2px solid var(--neon);
+  box-shadow:0 0 60px rgba(0,242,255,.25);
+}
+
+/* Animations */
+.fade{opacity:0;transform:translateY(40px);animation:fadeUp 1.2s ease forwards;}
+@keyframes fadeUp{
+  to{opacity:1;transform:none}
+}
+
+.hover-glow:hover{
+  box-shadow:0 0 40px rgba(0,242,255,.35);
+  transform:translateY(-6px);
+  transition:.4s;
+}
+
+/* Cinematic overlay */
+.noise:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:url("https://grainy-gradients.vercel.app/noise.svg");
+  opacity:.05;
+  pointer-events:none;
+}
+</style>
+</head>
+
+<body class="noise">
+
+<!-- NAV -->
+<nav class="fixed top-0 w-full z-50 px-12 py-6 bg-black/70 backdrop-blur-xl flex justify-between items-center">
+  <div class="heading text-cyan-400 text-lg">DEVOPS_COMMAND_CENTER</div>
+  <div class="mono text-xs tracking-widest space-x-8">
+    <a href="#home" class="hover:text-cyan-400">HOME</a>
+    <a href="#profile" class="hover:text-cyan-400">PROFILE</a>
+    <a href="#skills" class="hover:text-cyan-400">SKILLS</a>
+    <a href="#projects" class="hover:text-cyan-400">PROJECTS</a>
+    <a href="#contact" class="hover:text-cyan-400">CONTACT</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center px-16 pt-32">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
+
+<!-- LEFT -->
+<div class="fade">
+  <h1 class="heading text-6xl leading-tight">
+    MASTERING<br>
+    <span class="text-cyan-400">DEVOPS SYSTEMS</span>
+  </h1>
+
+  <p class="mt-8 text-lg text-[var(--muted)] max-w-md">
+    I design, automate and secure production-grade cloud infrastructure.
+    My focus is reliability, scalability and zero-downtime delivery.
+  </p>
+
+  <div class="mono text-xs text-cyan-400 mt-10">
+    ROLE: DEVOPS ENGINEER • STATUS: ACTIVE • MODE: AUTOMATION
+  </div>
+</div>
+
+<!-- RIGHT VIDEO -->
+<div class="relative frame rounded-2xl overflow-hidden h-[520px] fade">
+  <video autoplay muted loop playsinline class="w-full h-full object-cover brightness-75">
+    <source src="DevOps_Portfolio_Cinematic_Video_Created.mp4" type="video/mp4">
+  </video>
+
+  <div class="absolute bottom-6 left-6 bg-black/80 p-4 border-l-2 border-cyan-400">
+    <p class="mono text-[10px] text-cyan-400">OPERATION_NODE</p>
+    <p class="heading text-sm">JAIPUR / IN</p>
+  </div>
+</div>
+
+</div>
+</section>
+
+<!-- PROFILE -->
+<section id="profile" class="py-48 px-16">
+<div class="max-w-6xl mx-auto panel rounded-3xl p-20 fade">
+  <h2 class="heading text-4xl text-cyan-400 mb-8">ENGINEER_PROFILE</h2>
+  <p class="text-lg text-[var(--muted)] leading-relaxed max-w-4xl">
+    I work at the intersection of development and operations, building automated
+    systems that scale. My approach is infrastructure as code, observable systems,
+    and security by default.
+  </p>
+
+  <div class="grid md:grid-cols-3 gap-16 mt-20">
+    <div>
+      <p class="mono text-xs text-cyan-400">CORE_FOCUS</p>
+      <p class="text-xl">Cloud Automation</p>
+    </div>
+    <div>
+      <p class="mono text-xs text-cyan-400">STACK</p>
+      <p class="text-xl">AWS • Kubernetes • Terraform</p>
+    </div>
+    <div>
+      <p class="mono text-xs text-cyan-400">PHILOSOPHY</p>
+      <p class="text-xl">Reliability First</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-48 px-16 bg-black">
+<div class="max-w-7xl mx-auto">
+<h2 class="heading text-4xl text-cyan-400 mb-24">SKILLS_MATRIX</h2>
+
+<div class="grid lg:grid-cols-3 gap-12">
+
+<div class="panel p-12 rounded-2xl hover-glow">
+<h3 class="text-xl text-cyan-400 mb-6">Cloud Infrastructure</h3>
+<ul class="space-y-3 text-[var(--muted)]">
+<li>• AWS VPC, EC2, IAM, S3, RDS</li>
+<li>• High Availability Design</li>
+<li>• Load Balancers & Auto Scaling</li>
+</ul>
+</div>
+
+<div class="panel p-12 rounded-2xl hover-glow">
+<h3 class="text-xl text-cyan-400 mb-6">CI/CD Pipelines</h3>
+<ul class="space-y-3 text-[var(--muted)]">
+<li>• GitHub Actions & Jenkins</li>
+<li>• Build, Test, Deploy Automation</li>
+<li>• Blue-Green / Rolling Deploy</li>
+</ul>
+</div>
+
+<div class="panel p-12 rounded-2xl hover-glow">
+<h3 class="text-xl text-cyan-400 mb-6">Containers & K8s</h3>
+<ul class="space-y-3 text-[var(--muted)]">
+<li>• Docker Image Optimization</li>
+<li>• Kubernetes Workloads</li>
+<li>• Helm & Manifests</li>
+</ul>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-48 px-16">
+<div class="max-w-6xl mx-auto">
+<h2 class="heading text-4xl text-cyan-400 mb-20">MISSION_LOGS</h2>
+
+<div class="space-y-16">
+<div class="panel p-12 rounded-2xl fade">
+<h3 class="text-xl text-cyan-400 mb-4">Production CI/CD Platform</h3>
+<p class="text-[var(--muted)] leading-relaxed">
+Designed an end-to-end CI/CD pipeline integrating Docker, GitHub Actions
+and AWS for zero-downtime deployments.
+</p>
+</div>
+
+<div class="panel p-12 rounded-2xl fade">
+<h3 class="text-xl text-cyan-400 mb-4">Kubernetes Production Cluster</h3>
+<p class="text-[var(--muted)] leading-relaxed">
+Deployed and managed Kubernetes clusters with monitoring, logging,
+secure networking and autoscaling.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-48 px-16 bg-black">
+<div class="max-w-4xl mx-auto panel rounded-3xl p-20 text-center fade">
+<h2 class="heading text-4xl text-cyan-400 mb-8">INITIATE_CONTACT</h2>
+<p class="text-[var(--muted)] mb-12">
+Open for DevOps roles, internships and collaborations
+</p>
+
+<p class="mono text-cyan-400 text-sm">EMAIL</p>
+<p class="text-lg mb-8">yourname@devops.com</p>
+
+<p class="mono text-cyan-400 text-sm">LINKEDIN</p>
+<p class="text-lg">/in/yourusername</p>
+</div>
+</section>
+
+<footer class="py-12 text-center mono text-xs text-gray-600 tracking-widest">
+© 2026 DEVOPS_ENGINEER_NODE
+</footer>
+
+</body>
+</html>
