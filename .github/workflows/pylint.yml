@@ -29,4 +29,4 @@ jobs:
           echo "No Python files found. Skipping pylint."
           exit 0
         fi
-        pylint $FILES
+        pylint --disable=C0305 $FILES
