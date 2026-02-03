@@ -11,166 +11,166 @@
 
 <style>
 :root{
-  --bg:#020407;
-  --panel:#060b10;
+  --bg:#010305;
+  --panel:#050a0f;
   --neon:#00f2ff;
-  --muted:#7c8a96;
+  --muted:#8b9aa6;
 }
 
-html,body{
-  background:var(--bg);
+body{
+  background:radial-gradient(circle at top,#050b11,#010305);
   color:#e6edf3;
   font-family:'Space Grotesk',sans-serif;
-  scroll-behavior:smooth;
 }
 
-/* Typography */
-.heading{font-family:'Syncopate',sans-serif;letter-spacing:.08em;}
+.heading{font-family:'Syncopate',sans-serif;letter-spacing:.1em;}
 .mono{font-family:monospace;}
 
-/* Panels */
 .panel{
-  background:linear-gradient(180deg,#050b11,#020407);
-  border:1px solid rgba(0,242,255,.08);
-  box-shadow:0 0 80px rgba(0,0,0,.9);
+  background:linear-gradient(180deg,#060c12,#020407);
+  border:1px solid rgba(0,242,255,.1);
+  box-shadow:0 0 120px rgba(0,0,0,.95);
 }
 
-/* Neon frame */
 .frame{
   border:2px solid var(--neon);
-  box-shadow:0 0 60px rgba(0,242,255,.25);
+  box-shadow:0 0 80px rgba(0,242,255,.3);
 }
 
-/* Animations */
-.fade{opacity:0;transform:translateY(40px);animation:fadeUp 1.2s ease forwards;}
-@keyframes fadeUp{
-  to{opacity:1;transform:none}
+/* Scroll animation */
+.reveal{
+  opacity:0;
+  transform:translateY(70px) scale(.97);
+  transition:1.3s cubic-bezier(.2,.8,.2,1);
+}
+.reveal.active{
+  opacity:1;
+  transform:none;
 }
 
-.hover-glow:hover{
-  box-shadow:0 0 40px rgba(0,242,255,.35);
-  transform:translateY(-6px);
-  transition:.4s;
+/* Section divider */
+.divider{
+  height:1px;
+  background:linear-gradient(to right,transparent,var(--neon),transparent);
+  margin:120px 0;
+  opacity:.4;
 }
 
-/* Cinematic overlay */
-.noise:before{
+/* Film grain */
+body::before{
   content:"";
   position:fixed;
   inset:0;
   background:url("https://grainy-gradients.vercel.app/noise.svg");
-  opacity:.05;
+  opacity:.06;
   pointer-events:none;
 }
 </style>
 </head>
 
-<body class="noise">
+<body>
 
 <!-- NAV -->
-<nav class="fixed top-0 w-full z-50 px-12 py-6 bg-black/70 backdrop-blur-xl flex justify-between items-center">
+<nav class="fixed top-0 w-full z-50 px-14 py-6 bg-black/80 backdrop-blur-xl flex justify-between">
   <div class="heading text-cyan-400 text-lg">DEVOPS_COMMAND_CENTER</div>
-  <div class="mono text-xs tracking-widest space-x-8">
+  <div class="mono text-xs tracking-widest space-x-10">
     <a href="#home" class="hover:text-cyan-400">HOME</a>
     <a href="#profile" class="hover:text-cyan-400">PROFILE</a>
     <a href="#skills" class="hover:text-cyan-400">SKILLS</a>
     <a href="#projects" class="hover:text-cyan-400">PROJECTS</a>
-    <a href="#contact" class="hover:text-cyan-400">CONTACT</a>
   </div>
 </nav>
 
 <!-- HERO -->
-<section id="home" class="min-h-screen flex items-center px-16 pt-32">
-<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
+<section id="home" class="min-h-screen flex items-center px-20 pt-36 reveal">
+<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-28 items-center">
 
-<!-- LEFT -->
-<div class="fade">
+<div>
   <h1 class="heading text-6xl leading-tight">
-    MASTERING<br>
-    <span class="text-cyan-400">DEVOPS SYSTEMS</span>
+    DEVOPS<br>
+    <span class="text-cyan-400">COMMAND CENTER</span>
   </h1>
 
-  <p class="mt-8 text-lg text-[var(--muted)] max-w-md">
-    I design, automate and secure production-grade cloud infrastructure.
-    My focus is reliability, scalability and zero-downtime delivery.
+  <p class="mt-10 text-lg text-[var(--muted)] max-w-md leading-relaxed">
+    Building automated, secure and observable cloud platforms.
+    Focused on reliability, performance and zero-downtime delivery.
   </p>
 
-  <div class="mono text-xs text-cyan-400 mt-10">
-    ROLE: DEVOPS ENGINEER • STATUS: ACTIVE • MODE: AUTOMATION
-  </div>
+  <p class="mono text-xs text-cyan-400 mt-12">
+    ROLE: DEVOPS ENGINEER • ENV: CLOUD • STATE: ACTIVE
+  </p>
 </div>
 
-<!-- RIGHT VIDEO -->
-<div class="relative frame rounded-2xl overflow-hidden h-[520px] fade">
-  <video autoplay muted loop playsinline class="w-full h-full object-cover brightness-75">
-    <source src="DevOps_Portfolio_Cinematic_Video_Created.mp4" type="video/mp4">
+<div class="frame rounded-3xl overflow-hidden h-[540px] relative">
+  <video autoplay muted loop class="w-full h-full object-cover brightness-75">
+    <source src="DevOps_Portfolio_Cinematic_Video_Created.mp4">
   </video>
-
-  <div class="absolute bottom-6 left-6 bg-black/80 p-4 border-l-2 border-cyan-400">
-    <p class="mono text-[10px] text-cyan-400">OPERATION_NODE</p>
-    <p class="heading text-sm">JAIPUR / IN</p>
-  </div>
 </div>
 
 </div>
 </section>
+
+<div class="divider"></div>
 
 <!-- PROFILE -->
-<section id="profile" class="py-48 px-16">
-<div class="max-w-6xl mx-auto panel rounded-3xl p-20 fade">
-  <h2 class="heading text-4xl text-cyan-400 mb-8">ENGINEER_PROFILE</h2>
+<section id="profile" class="px-20 reveal">
+<div class="panel rounded-3xl p-24 max-w-6xl mx-auto">
+  <h2 class="heading text-4xl text-cyan-400 mb-10">ENGINEER_PROFILE</h2>
+
   <p class="text-lg text-[var(--muted)] leading-relaxed max-w-4xl">
-    I work at the intersection of development and operations, building automated
-    systems that scale. My approach is infrastructure as code, observable systems,
-    and security by default.
+    DevOps Engineer with hands-on experience in CI/CD automation,
+    cloud infrastructure, monitoring and security best practices.
+    I design systems that scale under load and recover automatically.
   </p>
 
-  <div class="grid md:grid-cols-3 gap-16 mt-20">
+  <div class="grid md:grid-cols-3 gap-20 mt-24">
     <div>
-      <p class="mono text-xs text-cyan-400">CORE_FOCUS</p>
-      <p class="text-xl">Cloud Automation</p>
+      <p class="mono text-xs text-cyan-400">PRIMARY_FOCUS</p>
+      <p class="text-xl mt-2">Automation & Reliability</p>
     </div>
     <div>
-      <p class="mono text-xs text-cyan-400">STACK</p>
-      <p class="text-xl">AWS • Kubernetes • Terraform</p>
+      <p class="mono text-xs text-cyan-400">PLATFORM</p>
+      <p class="text-xl mt-2">AWS / Linux</p>
     </div>
     <div>
-      <p class="mono text-xs text-cyan-400">PHILOSOPHY</p>
-      <p class="text-xl">Reliability First</p>
+      <p class="mono text-xs text-cyan-400">MINDSET</p>
+      <p class="text-xl mt-2">Infrastructure as Code</p>
     </div>
   </div>
 </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- SKILLS -->
-<section id="skills" class="py-48 px-16 bg-black">
+<section id="skills" class="px-20 reveal">
 <div class="max-w-7xl mx-auto">
 <h2 class="heading text-4xl text-cyan-400 mb-24">SKILLS_MATRIX</h2>
 
-<div class="grid lg:grid-cols-3 gap-12">
+<div class="grid lg:grid-cols-3 gap-16">
 
-<div class="panel p-12 rounded-2xl hover-glow">
+<div class="panel p-14 rounded-2xl">
 <h3 class="text-xl text-cyan-400 mb-6">Cloud Infrastructure</h3>
 <ul class="space-y-3 text-[var(--muted)]">
-<li>• AWS VPC, EC2, IAM, S3, RDS</li>
-<li>• High Availability Design</li>
-<li>• Load Balancers & Auto Scaling</li>
+<li>• AWS EC2, VPC, IAM, Load Balancers</li>
+<li>• High Availability & Scaling</li>
+<li>• Secure Networking Design</li>
 </ul>
 </div>
 
-<div class="panel p-12 rounded-2xl hover-glow">
-<h3 class="text-xl text-cyan-400 mb-6">CI/CD Pipelines</h3>
+<div class="panel p-14 rounded-2xl">
+<h3 class="text-xl text-cyan-400 mb-6">CI/CD Automation</h3>
 <ul class="space-y-3 text-[var(--muted)]">
-<li>• GitHub Actions & Jenkins</li>
-<li>• Build, Test, Deploy Automation</li>
-<li>• Blue-Green / Rolling Deploy</li>
+<li>• GitHub Actions Pipelines</li>
+<li>• Jenkins (Declarative Pipelines)</li>
+<li>• Automated Testing & Deployments</li>
 </ul>
 </div>
 
-<div class="panel p-12 rounded-2xl hover-glow">
-<h3 class="text-xl text-cyan-400 mb-6">Containers & K8s</h3>
+<div class="panel p-14 rounded-2xl">
+<h3 class="text-xl text-cyan-400 mb-6">Containers & Orchestration</h3>
 <ul class="space-y-3 text-[var(--muted)]">
-<li>• Docker Image Optimization</li>
+<li>• Docker Fundamentals</li>
 <li>• Kubernetes Workloads</li>
 <li>• Helm & Manifests</li>
 </ul>
@@ -180,50 +180,49 @@ html,body{
 </div>
 </section>
 
+<div class="divider"></div>
+
 <!-- PROJECTS -->
-<section id="projects" class="py-48 px-16">
+<section id="projects" class="px-20 reveal">
 <div class="max-w-6xl mx-auto">
 <h2 class="heading text-4xl text-cyan-400 mb-20">MISSION_LOGS</h2>
 
-<div class="space-y-16">
-<div class="panel p-12 rounded-2xl fade">
-<h3 class="text-xl text-cyan-400 mb-4">Production CI/CD Platform</h3>
+<div class="space-y-20">
+<div class="panel p-16 rounded-2xl">
+<h3 class="text-xl text-cyan-400 mb-4">CI/CD Automation Platform</h3>
 <p class="text-[var(--muted)] leading-relaxed">
-Designed an end-to-end CI/CD pipeline integrating Docker, GitHub Actions
-and AWS for zero-downtime deployments.
+Implemented CI pipelines using GitHub Actions to automatically build,
+test and deploy applications on cloud infrastructure.
 </p>
 </div>
 
-<div class="panel p-12 rounded-2xl fade">
-<h3 class="text-xl text-cyan-400 mb-4">Kubernetes Production Cluster</h3>
+<div class="panel p-16 rounded-2xl">
+<h3 class="text-xl text-cyan-400 mb-4">Cloud Infrastructure Setup</h3>
 <p class="text-[var(--muted)] leading-relaxed">
-Deployed and managed Kubernetes clusters with monitoring, logging,
-secure networking and autoscaling.
+Designed cloud environments with secure networking,
+monitoring and scaling strategies for production workloads.
 </p>
 </div>
 </div>
 </div>
 </section>
 
-<!-- CONTACT -->
-<section id="contact" class="py-48 px-16 bg-black">
-<div class="max-w-4xl mx-auto panel rounded-3xl p-20 text-center fade">
-<h2 class="heading text-4xl text-cyan-400 mb-8">INITIATE_CONTACT</h2>
-<p class="text-[var(--muted)] mb-12">
-Open for DevOps roles, internships and collaborations
-</p>
-
-<p class="mono text-cyan-400 text-sm">EMAIL</p>
-<p class="text-lg mb-8">yourname@devops.com</p>
-
-<p class="mono text-cyan-400 text-sm">LINKEDIN</p>
-<p class="text-lg">/in/yourusername</p>
-</div>
-</section>
-
-<footer class="py-12 text-center mono text-xs text-gray-600 tracking-widest">
+<footer class="py-20 text-center mono text-xs text-gray-600 tracking-widest">
 © 2026 DEVOPS_ENGINEER_NODE
 </footer>
+
+<script>
+const revealEls=document.querySelectorAll(".reveal");
+const onScroll=()=>{
+  revealEls.forEach(el=>{
+    if(el.getBoundingClientRect().top < window.innerHeight-120){
+      el.classList.add("active");
+    }
+  });
+};
+window.addEventListener("scroll",onScroll);
+onScroll();
+</script>
 
 </body>
 </html>
